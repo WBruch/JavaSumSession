@@ -2,11 +2,11 @@ package task2;
 
 public class AverageValue {
 
-// Напишите программу на Java, которая находит среднее значение всех элементов в массиве с плавающей точкой и выводит результат.
+    // Напишите программу на Java, которая находит среднее значение всех элементов в массиве с плавающей точкой и выводит результат.
     private static double getAverage(double[] array) {
         double result = 0;
         for (int i = 0; i < array.length; i++) {
-                result += array[i];
+            result += array[i];
         }
         return (result / array.length);
     }
