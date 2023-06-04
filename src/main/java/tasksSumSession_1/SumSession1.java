@@ -157,15 +157,78 @@ public class SumSession1 {
 //(Сложность 5) Напишите программу на Java, которая объединяет два отсортированных целочисленных массива в один отсортированный массив, используя алгоритм слияния (merge).
 
 
+    private static int[] getOneSortedFromTwo(int[] arrA, int[] arrB) {
+
+        int [] sortedArray = new int[arrA.length + arrB.length];
+        int k = 0, i = 0, j = 0;
+
+        while (i < arrA.length && j < arrB.length) {
+            if (arrA[i] <= arrB[j]) {
+                sortedArray[k++] = arrA[i++];
+            } else {
+                sortedArray[k++] = arrB[j++];
+            }
+        }
+
+        while (i < arrA.length) {
+            sortedArray[k++] = arrA[i++];
+        }
+        while (j < arrB.length) {
+            sortedArray[k++] = arrB[j++];
+        }
+
+        return sortedArray;
+    }
+
+// Task 9
+//(Сложность 5) Напишите программу на Java, которая находит наибольшую возрастающую последовательность в целочисленном массиве и выводит ее значения.
+
+
+    private static void getLongestIncreasingSequence(int[] array) {
+        int[] lengthOfSubsequence = new int[array.length];
+        Arrays.fill(lengthOfSubsequence, 1);
+        int maxLenght = 1;
+
+        for (int i = 1; i < array.length; i++) {
+            for (int j = 0; j < i; j++) {
+                if (array[i] > array[j]) {
+                    if (lengthOfSubsequence[i] <= lengthOfSubsequence[j]) {
+                        lengthOfSubsequence[i] = lengthOfSubsequence[j] +1;
+                        if (maxLenght < lengthOfSubsequence[i]) {
+                            maxLenght = lengthOfSubsequence[i];
+                        }
+                    }
+                }
+            }
+        }
+
+//        int[] longestIncreasingSequence = new int[maxLenght];
+//        int index = 0;
+//        while (maxLenght != -1) {
+//                longestIncreasingSequence[index] =
+     //   }
+
+        System.out.println(Arrays.toString(array));
+        System.out.println(Arrays.toString(array));
+        System.out.println(Arrays.toString(lengthOfSubsequence));
+        System.out.println(maxLenght);
+    }
+
+
 
 
     public static void main(String[] args) {
         int arr[] = {-4, 1, 65, -2, 8, 32, 0, 90, 8, 2, 10, 399, -27, 8};
+        int arr1[] = {-4, -1, 0, 2, 8, 32,};
+        int arr2[] = {4, 6, 10, 12, 18, 32,};
+        int arr3[] = {0,2,1,3,1,5,2,8,0};
         String str = "Hello world , Java summary session, friday. Tel-ran Berlin, Deutschland";
 
 //        System.out.println("Task 4. Kоличество негативных чисел в массиве равно: " + getAmountOfNegativeNumbers(arr));
 //        System.out.println("Task 5. Индекс первого вхождения заданного элемента в строковом массиве равен: " + findFirstEntryIndex(str, 'D'));
 //        System.out.println("Task 6. Массив полученный в результате сортировки слиянием (merge sort): " + Arrays.toString(getSortedArray(arr)));
 //        System.out.println("Task 7. Hаиболее часто встречающийся элемент в целочисленном массиве: " + getFrequentElement(arr));
+//        System.out.println("Task 8. Итоговый массив после слияния двух отсортированных массивов: " + Arrays.toString(getOneSortedFromTwo(arr2, arr1)));
+        getLongestIncreasingSequence(arr3);
     }
 }
