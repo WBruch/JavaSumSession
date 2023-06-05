@@ -46,7 +46,7 @@ public class Triangle {
     }
 
     public double getPerimeter(double sideA, double sideB, double sideC) {
-        if(sideA + sideB > sideC || sideA + sideC > sideB || sideC + sideB > sideA) {
+        if(sideA + sideB > sideC && sideA + sideC > sideB && sideC + sideB > sideA) {
             double perimeter = sideA + sideB + sideC;
             return perimeter;
         } else {
@@ -55,7 +55,7 @@ public class Triangle {
     }
 
     public double getArea(double perimeter, double sideA, double sideB, double sideC ) {
-        if(sideA + sideB > sideC || sideA + sideC > sideB || sideC + sideB > sideA) {
+        if(sideA + sideB > sideC && sideA + sideC > sideB && sideC + sideB > sideA) {
             double area = Math.sqrt((perimeter / 2) * ((perimeter / 2) - sideA) * ((perimeter / 2) - sideB) * ((perimeter / 2) - sideC));
             return area;
         } else {
