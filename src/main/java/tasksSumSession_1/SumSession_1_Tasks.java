@@ -3,7 +3,7 @@ package tasksSumSession_1;
 
 import java.util.Arrays;
 
-public class SumSession1 {
+public class SumSession_1_Tasks {
     //Task 1
 //Напишите программу на Java, которая находит сумму всех элементов в целочисленном массиве и выводит результат.
     private static int getSum(int[] array) {
@@ -212,7 +212,30 @@ public class SumSession1 {
         System.out.println(Arrays.toString(array));
         System.out.println(Arrays.toString(lengthOfSubsequence));
         System.out.println(maxLenght);
+
+        // нашёл наибольшую возрастающую последовательность, но не могу её вывести.
     }
+
+
+
+// Task 10
+// (Сложность 5) Напишите программу на Java, которая находит пару элементов в целочисленном массиве, сумма которых равна заданному числу, и выводит их значения.
+
+
+    private static void getPairFromSum(int[] array, int sum) {
+
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[i] + array[j] == sum) {
+                    System.out.println("пара чисел сумма которых равна " + sum + " это числа: " + array[i] + " и " + array[j]);
+                }
+            }
+        }
+
+    }
+
+
+
 
 
 
@@ -221,7 +244,7 @@ public class SumSession1 {
         int arr[] = {-4, 1, 65, -2, 8, 32, 0, 90, 8, 2, 10, 399, -27, 8};
         int arr1[] = {-4, -1, 0, 2, 8, 32,};
         int arr2[] = {4, 6, 10, 12, 18, 32,};
-        int arr3[] = {0,2,1,3,1,5,2,8,0};
+        int arr3[] = {0, 2, 1, 3, 1, 5, 2, 8, 0};
         String str = "Hello world , Java summary session, friday. Tel-ran Berlin, Deutschland";
 
 //        System.out.println("Task 4. Kоличество негативных чисел в массиве равно: " + getAmountOfNegativeNumbers(arr));
@@ -229,6 +252,7 @@ public class SumSession1 {
 //        System.out.println("Task 6. Массив полученный в результате сортировки слиянием (merge sort): " + Arrays.toString(getSortedArray(arr)));
 //        System.out.println("Task 7. Hаиболее часто встречающийся элемент в целочисленном массиве: " + getFrequentElement(arr));
 //        System.out.println("Task 8. Итоговый массив после слияния двух отсортированных массивов: " + Arrays.toString(getOneSortedFromTwo(arr2, arr1)));
-        getLongestIncreasingSequence(arr3);
+//        getLongestIncreasingSequence(arr3);
+//        getPairFromSum(arr3, 5);  // Task 10
     }
 }
